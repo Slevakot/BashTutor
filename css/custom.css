@@ -1,0 +1,9 @@
+body {
+  min-height: 100vh;
+}
+
+/* Стилизация блока-симулятора терминала */
+.placeholder-box {
+  min-height: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
