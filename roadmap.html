@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap — BashTutor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- Шапка -->
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+                    <h1 class="h3 mb-1 text-warning">&gt;_ BashTutor</h1>
+                    <p class="mb-0 text-secondary">Дорожная карта освоения командной строки Bash</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-end mt-2 mt-md-0">
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#feedbackModal">
+                        Предложить команду
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="index.html">BashTutor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог команд</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="roadmap.html">Roadmap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <main class="container my-5 flex-grow-1">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Последовательность изучения Bash</h2>
+            <p class="text-muted">Рекомендуемый пошаговый порядок изучения 8 основных команд проекта</p>
+        </div>
+
+        <div class="card p-4 shadow-sm border-0 mb-5 bg-white text-center">
+            <div class="mermaid">
+                flowchart TD
+
+                subgraph B1["Блок 1: Навигация и файлы"]
+                direction LR
+                ls["ls (Просмотр)"]
+                cd["cd (Переход)"]
+                mkdir["mkdir (Создание папок)"]
+                touch["touch (Создание файла)"]
+                cp["cp (Копирование)"]
+                mv["mv (Перемещение)"]
+                rm["rm (Удаление)"]
+                end
+
+                subgraph B2["Блок 2: Текст и чтение"]
+                direction LR
+                cat["cat (Просмотр файла)"]
+                head["head (Начало файла)"]
+                tail["tail (Конец файла)"]
+                grep["grep (Поиск в тексте)"]
+                sort["sort (Сортировка)"]
+                end
+
+                subgraph B3["Блок 3: Права и пользователи"]
+                direction LR
+                chmod["chmod (Права доступа)"]
+                chown["chown (Владелец файла)"]
+                sudo["sudo (Права администратора)"]
+                end
+
+                subgraph B4["Блок 4: Процессы"]
+                direction LR
+                ps["ps (Процессы)"]
+                top["top (Монитор процессов)"]
+                kill["kill (Завершение процесса)"]
+                end
+
+                subgraph B5["Блок 5: Сеть"]
+                direction LR
+                ping["ping (Проверка связи)"]
+                curl["curl (Сетевые запросы)"]
+                wget["wget (Загрузка файлов)"]
+                ssh["ssh (Удалённый доступ)"]
+                end
+
+                subgraph B6["Блок 6: Архивы и система"]
+                direction LR
+                tar["tar (Архивы)"]
+                gzip["gzip (Сжатие)"]
+                df["df (Место на диске)"]
+                du["du (Размер папок)"]
+                end
+
+                B1 --> B2
+                B2 --> B3
+                B2 --> B5
+                B3 --> B4
+                B4 --> B6
+                B5 --> B6
+
+                click ls "./commands/command-ls.html" "Документация ls"
+                click cd "./commands/command-cd.html" "Документация cd"
+                click mkdir "./commands/command-mkdir.html" "Документация mkdir"
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Модальное окно обратной связи (Предложить команду) -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="feedbackModalLabel">Предложить новую команду</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Закрыть"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <p class="text-muted small mb-3">Знаете полезную команду Bash, которой нет в нашем справочнике?
+                            Заполните форму ниже.</p>
+
+                        <div class="mb-3">
+                            <label for="cmd-name" class="form-label">Название команды *</label>
+                            <input type="text" class="form-control font-monospace" id="cmd-name"
+                                placeholder="например, htop" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cmd-category" class="form-label">Категория *</label>
+                            <select class="form-select" id="cmd-category" required>
+                                <option value="" selected disabled>Выберите категорию</option>
+                                <option value="files">Файлы и папки</option>
+                                <option value="text">Работа с текстом</option>
+                                <option value="system">Система и процессы</option>
+                                <option value="network">Сеть и загрузки</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cmd-description" class="form-label">Краткое описание / Пример
+                                использования</label>
+                            <textarea class="form-control" id="cmd-description" rows="3"
+                                placeholder="Опишите, зачем нужна команда и приведите пример..."></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user-email" class="form-label">Ваш E-mail (опционально)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="email" class="form-control" id="user-email" placeholder="name@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="agreeCheck" required>
+                            <label class="form-check-label small text-muted" for="agreeCheck">
+                                Согласен на публикацию предложенного примера
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="submit" class="btn btn-primary">Отправить предложение</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-0">&copy; 2026 BashTutor. Образовательный проект.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            flowchart: {
+                nodeSpacing: 8,
+                rankSpacing: 25,
+                padding: 6,
+                subGraphTitleMargin: { top: 6, bottom: 12 }
+            }
+        });
+    </script>
+</body>
+
+</html>
