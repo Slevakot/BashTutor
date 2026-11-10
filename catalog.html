@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог команд — BashGuide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- Шапка -->
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+                    <h1 class="h3 mb-1 text-warning">&gt;_ BashGuide</h1>
+                    <p class="mb-0 text-secondary">Полный каталог доступных команд Linux</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-end mt-2 mt-md-0">
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#feedbackModal">
+                        Предложить команду
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="index.html">BashGuide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalog.html">Каталог
+                            команд</a></li>
+                    <li class="nav-item"><a class="nav-link" href="roadmap.html">Roadmap</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент -->
+    <main class="container my-5 flex-grow-1">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            Используйте каталог для быстрого поиска команд по категориям и уровню сложности.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+        </div>
+
+        <!-- Поиск и фильтрация -->
+        <div class="row g-3 mb-4">
+            <div class="col-12 col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text">Поиск</span>
+                    <input type="text" class="form-control" placeholder="Введите название команды...">
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <select class="form-select">
+                    <option selected>Все категории</option>
+                    <option value="files">Файлы и папки</option>
+                    <option value="text">Работа с текстом</option>
+                    <option value="system">Система и процессы</option>
+                    <option value="network">Сеть и загрузки</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Список команд -->
+        <div class="row g-4">
+            <!-- 1. ls -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">ls</h2>
+                            <span class="badge bg-success">Базовый</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Файлы и папки</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Просмотр содержимого текущего или указанного
+                            каталога.</p>
+                        <a href="command.html?name=ls" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. cd -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">cd</h2>
+                            <span class="badge bg-success">Базовый</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Файлы и папки</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Смена текущей рабочей директории в файловой
+                            системе.</p>
+                        <a href="command.html?name=cd" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. mkdir -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">mkdir</h2>
+                            <span class="badge bg-success">Базовый</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Файлы и папки</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Создание новых папок и вложенных каталогов.</p>
+                        <a href="command.html?name=mkdir" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. cat -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">cat</h2>
+                            <span class="badge bg-primary">Средний</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Работа с текстом</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Вывод содержимого файлов в консоль и их
+                            объединение.</p>
+                        <a href="command.html?name=cat" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. grep -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">grep</h2>
+                            <span class="badge bg-primary">Средний</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Работа с текстом</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Поиск совпадений по шаблонам и регулярным
+                            выражениям.</p>
+                        <a href="command.html?name=grep" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. chmod -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">chmod</h2>
+                            <span class="badge bg-warning text-dark">Продвинутый</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Система и процессы</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Управление правами доступа (чтение, запись,
+                            исполнение).</p>
+                        <a href="command.html?name=chmod" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. ps -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">ps</h2>
+                            <span class="badge bg-warning text-dark">Продвинутый</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Система и процессы</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Отображение текущих активных процессов в системе.
+                        </p>
+                        <a href="command.html?name=ps" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. curl -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h4 font-monospace text-primary mb-0">curl</h2>
+                            <span class="badge bg-warning text-dark">Продвинутый</span>
+                        </div>
+                        <p class="text-muted small mb-1">Категория: Сеть и загрузки</p>
+                        <p class="card-text text-secondary mt-2 mb-3">Передача данных и отправка HTTP-запросов к
+                            серверам.</p>
+                        <a href="command.html?name=curl" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Пустое модальное окно обратной связи -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Предложить новую команду</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <p class="text-muted mb-0">Форма вызова предложений готова.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-0">&copy; 2026 BashGuide. Образовательный проект.</p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <a class="text-white text-decoration-none me-3" href="catalog.html">Каталог</a>
+                    <a class="text-white text-decoration-none" href="roadmap.html">Roadmap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
