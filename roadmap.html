@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap — BashGuide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- Шапка -->
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+                    <h1 class="h3 mb-1 text-warning">&gt;_ BashGuide</h1>
+                    <p class="mb-0 text-secondary">Дорожная карта освоения командной строки Bash</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-end mt-2 mt-md-0">
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#feedbackModal">
+                        Предложить команду
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="index.html">BashGuide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог команд</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="roadmap.html">Roadmap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <main class="container my-5 flex-grow-1">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Последовательность изучения Bash</h2>
+            <p class="text-muted">Рекомендуемый пошаговый порядок изучения 8 основных команд проекта</p>
+        </div>
+
+        <!-- График Mermaid -->
+        <div class="card p-4 shadow-sm border-0 mb-5 bg-white text-center">
+            <div class="mermaid">
+                flowchart TD
+                subgraph B1["Блок 1: Навигация и Файлы"]
+                ls["ls (Просмотр)"] --> cd["cd (Переход)"]
+                cd --> mkdir["mkdir (Создание папок)"]
+                end
+
+                subgraph B2["Блок 2: Текст и Чтение"]
+                mkdir --> cat["cat (Просмотр файла)"]
+                cat --> grep["grep (Поиск в тексте)"]
+                end
+
+                subgraph B3["Блок 3: Администрирование и Сеть"]
+                grep --> chmod["chmod (Права доступа)"]
+                chmod --> ps["ps (Процессы)"]
+                ps --> curl["curl (Сетевые запросы)"]
+                end
+
+                click ls "command.html?name=ls" "Документация ls"
+                click cd "command.html?name=cd" "Документация cd"
+                click mkdir "command.html?name=mkdir" "Документация mkdir"
+                click cat "command.html?name=cat" "Документация cat"
+                click grep "command.html?name=grep" "Документация grep"
+                click chmod "command.html?name=chmod" "Документация chmod"
+                click ps "command.html?name=ps" "Документация ps"
+                click curl "command.html?name=curl" "Документация curl"
+            </div>
+        </div>
+
+        <!-- Текстовые блоки с описанием этапов -->
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                    <span class="badge bg-success mb-2">Этап 1</span>
+                    <h3 class="h5">Базовая навигация</h3>
+                    <p class="text-muted small">Освойте ориентирование в файловой структуре. Научитесь просматривать
+                        содержимое каталогов (`ls`), перемещаться по папкам (`cd`) и создавать структуру проектов
+                        (`mkdir`).</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                    <span class="badge bg-primary mb-2">Этап 2</span>
+                    <h3 class="h5">Обработка данных</h3>
+                    <p class="text-muted small">Изучите работу с файлами. Научитесь читать текстовые данные прямо в
+                        терминале (`cat`) и производить быстрый поиск по регулярным выражениям и ключевым словам
+                        (`grep`).</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                    <span class="badge bg-warning text-dark mb-2">Этап 3</span>
+                    <h3 class="h5">Система и Сеть</h3>
+                    <p class="text-muted small">Переходите к администрированию. Разберитесь с правами доступа к файлам
+                        (`chmod`), отслеживанием запущенных процессов (`ps`) и взаимодействием с веб-сервисами (`curl`).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Пустое модальное окно обратной связи -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Предложить новую команду</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <p class="text-muted mb-0">Форма вызова предложений готова.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-0">&copy; 2026 BashGuide. Образовательный проект.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Подключение Mermaid через ESM скрипт -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</body>
+
+</html>

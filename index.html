@@ -170,21 +170,64 @@
         </section>
     </main>
 
-    <!-- Пустое модальное окно обратной связи -->
+    <!-- Модальное окно обратной связи (Предложить команду) -->
     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="feedbackModalLabel">Предложить новую команду</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="feedbackModalLabel">Предложить новую команду</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Закрыть"></button>
                 </div>
-                <div class="modal-body">
-                    <!-- Содержимое формы появится на следующих этапах разработки -->
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                </div>
+                <form>
+                    <div class="modal-body">
+                        <p class="text-muted small mb-3">Знаете полезную команду Bash, которой нет в нашем справочнике?
+                            Заполните форму ниже.</p>
+
+                        <div class="mb-3">
+                            <label for="cmd-name" class="form-label">Название команды *</label>
+                            <input type="text" class="form-control font-monospace" id="cmd-name"
+                                placeholder="например, htop" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cmd-category" class="form-label">Категория *</label>
+                            <select class="form-select" id="cmd-category" required>
+                                <option value="" selected disabled>Выберите категорию</option>
+                                <option value="files">Файлы и папки</option>
+                                <option value="text">Работа с текстом</option>
+                                <option value="system">Система и процессы</option>
+                                <option value="network">Сеть и загрузки</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cmd-description" class="form-label">Краткое описание / Пример
+                                использования</label>
+                            <textarea class="form-control" id="cmd-description" rows="3"
+                                placeholder="Опишите, зачем нужна команда и приведите пример..."></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user-email" class="form-label">Ваш E-mail (опционально)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="email" class="form-control" id="user-email" placeholder="name@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="agreeCheck" required>
+                            <label class="form-check-label small text-muted" for="agreeCheck">
+                                Согласен на публикацию предложенного примера
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="submit" class="btn btn-primary">Отправить предложение</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
