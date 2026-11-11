@@ -68,7 +68,8 @@
                 <div class="col-12 col-lg-5">
                     <div
                         class="p-4 bg-dark text-success rounded border border-secondary placeholder-box font-monospace">
-                        <p class="mb-1"><span class="text-secondary">user@BashTutor:~$</span> echo "Welcome to BashTutor!"</p>
+                        <p class="mb-1"><span class="text-secondary">user@BashTutor:~$</span> echo "Welcome to
+                            BashTutor!"</p>
                         <p class="mb-1 text-white">Welcome to BashTutor!</p>
                         <p class="mb-0"><span class="text-secondary">user@BashTutor:~$</span> man bash_</p>
                     </div>
@@ -91,7 +92,8 @@
                     <div class="p-4 border rounded bg-white h-100 shadow-sm text-center">
                         <h3 class="h5 text-primary">Работа с текстом</h3>
                         <p class="text-muted small">Просмотр, поиск, фильтрация и обработка текстовых данных.</p>
-                        <a href="catalog.html?cat=text" class="btn btn-sm btn-outline-primary">Смотреть (grep, cat, sed)</a>
+                        <a href="catalog.html?cat=text" class="btn btn-sm btn-outline-primary">Смотреть (grep, cat,
+                            sed)</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
@@ -120,54 +122,84 @@
                 <a class="btn btn-outline-primary" href="catalog.html">Все команды</a>
             </div>
             <div class="row g-4">
+
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded bg-white h-100 p-4 shadow-sm">
-                        <span class="badge bg-success mb-2">Базовая</span>
-                        <h3 class="h5 font-monospace">ls</h3>
-                        <p class="text-muted small">Выводит список файлов и каталогов в текущей директории.</p>
-                        <a class="btn btn-sm btn-primary" href="command-ls.html">Подробнее</a>
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h2 class="card-title h4 font-monospace text-primary mb-0">ls</h2>
+                                <span class="badge bg-success">Базовый</span>
+                            </div>
+                            <p class="text-muted small mb-1">Категория: Файлы и папки</p>
+                            <p class="card-text text-secondary mt-2 mb-3">Просмотр содержимого текущего или указанного
+                                каталога.</p>
+                            <a href="./commands/command-ls.html" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded bg-white h-100 p-4 shadow-sm">
-                        <span class="badge bg-warning text-dark mb-2">Популярная</span>
-                        <h3 class="h5 font-monospace">grep</h3>
-                        <p class="text-muted small">Ищет шаблоны и строки в текстовых файлах или выводе команд.</p>
-                        <a class="btn btn-sm btn-primary" href="command-grep.html">Подробнее</a>
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h2 class="card-title h4 font-monospace text-primary mb-0">cd</h2>
+                                <span class="badge bg-success">Базовый</span>
+                            </div>
+                            <p class="text-muted small mb-1">Категория: Файлы и папки</p>
+                            <p class="card-text text-secondary mt-2 mb-3">Смена текущей рабочей директории в файловой
+                                системе.</p>
+                            <a href="./commands/command-cd.html" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded bg-white h-100 p-4 shadow-sm">
-                        <span class="badge bg-danger mb-2">Системная</span>
-                        <h3 class="h5 font-monospace">chmod</h3>
-                        <p class="text-muted small">Изменяет права доступа к файлам и каталогам.</p>
-                        <a class="btn btn-sm btn-primary" href="command-chmod.html">Подробнее</a>
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h2 class="card-title h4 font-monospace text-primary mb-0">mkdir</h2>
+                                <span class="badge bg-success">Базовый</span>
+                            </div>
+                            <p class="text-muted small mb-1">Категория: Файлы и папки</p>
+                            <p class="card-text text-secondary mt-2 mb-3">Создание новых папок и вложенных каталогов.
+                            </p>
+                            <a href="./commands/command-mkdir.html"
+                                class="btn btn-outline-primary mt-auto">Подробнее</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Ответы на вопросы (FAQ) -->
         <section class="container my-5">
             <h2 class="text-center mb-4 fw-bold">Часто задаваемые вопросы</h2>
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-8">
-                    <div class="mb-3 p-3 border rounded bg-white">
-                        <h3 class="h6 fw-bold">С чего начать изучение Bash?</h3>
+                <div class="col-12 col-lg-9">
+                    <div class="mb-3 p-3 border rounded bg-white shadow-sm">
+                        <h3 class="h6 fw-bold text-primary">С чего начать изучение Bash?</h3>
                         <p class="mb-0 text-muted small">Рекомендуем перейти на страницу Roadmap — там представлена
-                            поэтапная схема изучений от навигации до скриптов.</p>
+                            пошаговая схема изучения команд от базовой навигации до администрирования.</p>
                     </div>
-                    <div class="mb-3 p-3 border rounded bg-white">
-                        <h3 class="h6 fw-bold">Зачем нужен справочник Bash?</h3>
-                        <p class="mb-0 text-muted small">Он позволяет быстро найти синтаксис, ключи, флаги и рабочие
-                            примеры использования команд без необходимости искать в `man` страницах.</p>
+                    <div class="mb-3 p-3 border rounded bg-white shadow-sm">
+                        <h3 class="h6 fw-bold text-primary">Зачем нужен этот справочник?</h3>
+                        <p class="mb-0 text-muted small">Он позволяет быстро находить синтаксис, ключи, флаги и рабочие
+                            примеры использования команд без необходимости долго искать их в мануалах (`man`).</p>
+                    </div>
+                    <div class="mb-3 p-3 border rounded bg-white shadow-sm">
+                        <h3 class="h6 fw-bold text-primary">Как пользоваться каталогом и фильтрами?</h3>
+                        <p class="mb-0 text-muted small">На странице «Каталог команд» вы можете использовать строку
+                            поиска по названию и выпадающий список для фильтрации по категориям.</p>
+                    </div>
+                    <div class="mb-3 p-3 border rounded bg-white shadow-sm">
+                        <h3 class="h6 fw-bold text-primary">Можно ли предложить новую команду для добавления?</h3>
+                        <p class="mb-0 text-muted small">Да! Для этого предусмотрена специальная кнопка «Предложить
+                            команду» в шапке сайта, открывающая интерактивное модальное окно с формой.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Модальное окно обратной связи (Предложить команду) -->
     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -229,7 +261,6 @@
         </div>
     </div>
 
-    <!-- Подвал -->
     <footer class="bg-dark text-white py-4 mt-auto">
         <div class="container">
             <div class="row align-items-center g-3">
@@ -240,7 +271,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
