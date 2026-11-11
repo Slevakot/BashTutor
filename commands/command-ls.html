@@ -30,7 +30,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container">
-            <a class="navbar-brand fw-bold text-warning" href="index.html">BashTutor</a>
+            <a class="navbar-brand fw-bold text-warning" href="../index.html">BashTutor</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -73,7 +73,8 @@
                     <section id="syntax" class="mb-4">
                         <h2 class="h4 border-bottom pb-2">Синтаксис</h2>
                         <p class="text-secondary">Общий формат вызова команды:</p>
-                        <pre class="bg-dark text-light p-3 rounded"><code class="language-bash">ls [опции] [путь_к_каталогу]</code></pre>
+                        <pre
+                            class="bg-dark text-light p-3 rounded"><code class="language-bash">ls [опции] [путь_к_каталогу]</code></pre>
                     </section>
 
                     <section id="examples" class="mb-4">
@@ -100,7 +101,8 @@
                             <li><code>-l</code> — подробный формат вывода;</li>
                             <li><code>-a</code> — показать скрытые файлы;</li>
                             <li><code>-h</code> — человекочитаемые размеры файлов (например, <code>4K</code>,
-                                <code>25M</code>);</li>
+                                <code>25M</code>);
+                            </li>
                             <li><code>-t</code> — сортировка по времени изменения.</li>
                         </ul>
                     </section>
@@ -127,25 +129,63 @@
         </div>
     </main>
 
-    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title">Предложить новую команду</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="feedbackModalLabel">Предложить новую команду</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Закрыть"></button>
                 </div>
-                <div class="modal-body py-4">
-                    <form>
+                <form>
+                    <div class="modal-body">
+                        <p class="text-muted small mb-3">Знаете полезную команду Bash, которой нет в нашем справочнике?
+                            Заполните форму ниже.</p>
+
                         <div class="mb-3">
-                            <label class="form-label">Название команды</label>
-                            <input type="text" class="form-control" placeholder="например, htop">
+                            <label for="cmd-name" class="form-label">Название команды *</label>
+                            <input type="text" class="form-control font-monospace" id="cmd-name"
+                                placeholder="например, htop" required>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary">Отправить</button>
-                </div>
+
+                        <div class="mb-3">
+                            <label for="cmd-category" class="form-label">Категория *</label>
+                            <select class="form-select" id="cmd-category" required>
+                                <option value="" selected disabled>Выберите категорию</option>
+                                <option value="files">Файлы и папки</option>
+                                <option value="text">Работа с текстом</option>
+                                <option value="system">Система и процессы</option>
+                                <option value="network">Сеть и загрузки</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cmd-description" class="form-label">Краткое описание / Пример
+                                использования</label>
+                            <textarea class="form-control" id="cmd-description" rows="3"
+                                placeholder="Опишите, зачем нужна команда и приведите пример..."></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user-email" class="form-label">Ваш E-mail (опционально)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="email" class="form-control" id="user-email" placeholder="name@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="agreeCheck" required>
+                            <label class="form-check-label small text-muted" for="agreeCheck">
+                                Согласен на публикацию предложенного примера
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="submit" class="btn btn-primary">Отправить предложение</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
