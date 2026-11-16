@@ -7,16 +7,19 @@
     <title>Roadmap — BashTutor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="icon" href="images/icon.svg">
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-light">
 
-    <!-- Шапка -->
     <header class="bg-dark text-white py-3">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-8">
-                    <h1 class="h3 mb-1 text-warning">&gt;_ BashTutor</h1>
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                        <img class="logo" src="./images/icon.svg" width="35" height="35" alt="логотип">
+                        <h1 class="h3 mb-0 text-warning">BashTutor</h1>
+                    </div>
                     <p class="mb-0 text-secondary">Дорожная карта освоения командной строки Bash</p>
                 </div>
                 <div class="col-12 col-md-4 text-md-end mt-2 mt-md-0">
@@ -29,7 +32,6 @@
         </div>
     </header>
 
-    <!-- Навигация -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container">
             <a class="navbar-brand fw-bold text-warning" href="index.html">BashTutor</a>
@@ -42,16 +44,103 @@
                     <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог команд</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="roadmap.html">Roadmap</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">О проекте</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Основное содержимое -->
     <main class="container my-5 flex-grow-1">
-        <div class="text-center mb-5">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Roadmap</li>
+            </ol>
+        </nav>
+
+        <div class="text-center mb-4">
             <h2 class="fw-bold">Последовательность изучения Bash</h2>
-            <p class="text-muted">Рекомендуемый пошаговый порядок изучения 8 основных команд проекта</p>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-12">
+                <div class="p-4 bg-white rounded shadow-sm border-0">
+                    <h3 class="h5 fw-bold text-primary mb-3">Как правильно изучать Bash?</h3>
+                    <p class="text-secondary">
+                        Освоение командной строки Linux лучше всего строить по принципу от простого к сложному: начиная
+                        с базовой навигации по файловой системе и постепенно переходя к администрированию, работе с
+                        текстом, процессами и сетями. Ниже приведено подробное описание каждого этапа обучения.
+                    </p>
+
+                    <hr class="my-4">
+
+                    <div class="mb-4">
+                        <h4 class="h6 fw-bold text-dark">📁 Блок 1: Навигация и файлы</h4>
+                        <p class="text-muted small mb-0">
+                            Фундаментальный этап, с которого начинается знакомство с терминалом. Вы научитесь
+                            просматривать содержимое папок (<code>ls</code>), перемещаться по каталогам
+                            (<code>cd</code>), создавать новые директории (<code>mkdir</code>) и пустые файлы
+                            (<code>touch</code>), а также копировать (<code>cp</code>), перемещать (<code>mv</code>) и
+                            удалять (<code>rm</code>) объекты.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="h6 fw-bold text-dark">📄 Блок 2: Текст и чтение</h4>
+                        <p class="text-muted small mb-0">
+                            На втором этапе вы освоите инструменты для просмотра и анализа содержимого файлов. Сюда
+                            входит вывод файлов целиком (<code>cat</code>), просмотр их начала или конца
+                            (<code>head</code>, <code>tail</code>), поиск нужных строк и шаблонов по регулярным
+                            выражениям (<code>grep</code>), а также сортировка данных (<code>sort</code>).
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="h6 fw-bold text-dark">🔒 Блок 3: Права и пользователи</h4>
+                        <p class="text-muted small mb-0">
+                            Безопасность и разграничение доступа в Linux. Этот блок охватывает управление правами
+                            доступа к файлам и папкам (<code>chmod</code>), изменение владельцев (<code>chown</code>), а
+                            также выполнение команд с повышенными привилегиями администратора (<code>sudo</code>).
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="h6 fw-bold text-dark">⚙️ Блок 4: Процессы</h4>
+                        <p class="text-muted small mb-0">
+                            Мониторинг того, что происходит «под капотом» системы. Вы узнаете, как выводить список
+                            запущенных процессов (<code>ps</code>), в реальном времени отслеживать потребление ресурсов
+                            процессора и памяти (<code>top</code>), а также принудительно завершать зависшие задачи
+                            (<code>kill</code>).
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="h6 fw-bold text-dark">🌐 Блок 5: Сеть</h4>
+                        <p class="text-muted small mb-0">
+                            Инструменты для взаимодействия с внешним миром и серверами. Изучение включает проверку
+                            сетевой доступности хостов (<code>ping</code>), отправку HTTP/HTTPS запросов
+                            (<code>curl</code>), скачивание файлов из интернета (<code>wget</code>) и безопасное
+                            подключение к удаленным машинам по протоколу SSH (<code>ssh</code>).
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="h6 fw-bold text-dark">📦 Блок 6: Архивы и система</h4>
+                        <p class="text-muted small mb-0">
+                            Заключительный этап объединяет навыки работы с архивами и резервными копиями
+                            (<code>tar</code>, <code>gzip</code>), а также мониторинг дискового пространства и
+                            свободного места на файловых системах (<code>df</code>, <code>du</code>).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-3">
+            <h3 class="h4 fw-bold">Визуальная схема (Roadmap)</h3>
+            <p class="text-muted small">Краткое графическое представление описанной выше последовательности</p>
         </div>
 
         <div class="card p-4 shadow-sm border-0 mb-5 bg-white text-center">
@@ -123,7 +212,6 @@
 
     </main>
 
-    <!-- Модальное окно обратной связи (Предложить команду) -->
     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -185,16 +273,47 @@
         </div>
     </div>
 
-    <!-- Подвал -->
     <footer class="bg-dark text-white py-4 mt-auto">
         <div class="container">
-            <div class="row align-items-center g-3">
-                <div class="col-12 col-md-6">
-                    <p class="mb-0">&copy; 2026 BashTutor. Образовательный проект.</p>
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-4 text-center text-md-start">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3 mb-1">
+                        <img class="logo" src="./images/icon.svg" width="35" height="35" alt="">
+                        <h1 class="h3 mb-0 text-warning">BashTutor</h1>
+                    </div>
+                    <p class="mb-0 text-secondary">Интерактивный справочник и дорожная карта изучения Bash</p>
+                    <p class="mb-0 text-secondary">&copy; 2026 BashTutor. Все права защищены</p>
+                </div>
+
+                <div class="col-12 col-md-4 text-center">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-3"><a href="index.html"
+                                class="text-white text-decoration-none">Главная</a></li>
+                        <li class="list-inline-item me-3"><a href="catalog.html"
+                                class="text-white text-decoration-none">Каталог команд</a></li>
+                        <li class="list-inline-item me-3"><a href="roadmap.html"
+                                class="text-white text-decoration-none">Roadmap</a></li>
+                        <li class="list-inline-item"><a href="about.html" class="text-white text-decoration-none">О
+                                проекте</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <p class="mb-1 text-secondary">Связаться с нами</p>
+                    <p class="mb-0"><a href="#" class="text-white text-decoration-none">example@mail.ru</a></p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <button type="button"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-4 shadow align-items-center justify-content-center d-none"
+        id="backToTopBtn" title="Наверх">
+        Наверх
+    </button>
+
+    <script src="./scripts/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

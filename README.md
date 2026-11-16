@@ -41,3 +41,9 @@ bash-guide/
 - CSS3 / Bootstrap 5;
 - JavaScript (Bootstrap Bundle JS);
 - Git / GitHub.
+
+
+
+хлебные крошки
+наверх (не стрелочка)
+страница "о проекте"
